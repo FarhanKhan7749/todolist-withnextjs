@@ -10,8 +10,7 @@ export async function PUT(request, { params }) {
     await Topic.findByIdAndUpdate(id, { title, description });
     return NextResponse.json({ message: "Topic updated" }, { status: 200 });
   }
-
-
+  
   export async function GET(request, { params }) {
     const { id } = params;
     await connectMongDB();
